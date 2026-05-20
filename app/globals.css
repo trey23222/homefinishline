@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --navy: #0D2240;
+    --navy-mid: #1A3A5C;
+    --navy-light: #1e4d7a;
+    --gold: #C9A84C;
+    --gold-dark: #C8952A;
+    --gold-light: #E8B84B;
+    --cream: #F5F0E8;
+    --cream-dark: #F0EBE1;
+    --border: #DDD6CA;
+    --text: #1A1A1A;
+    --text-mid: #3D3D3D;
+    --text-muted: #6B6B6B;
+    --green: #2A7A4B;
+    --green-light: #EBF5EF;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: var(--cream);
+    color: var(--text);
+    line-height: 1.7;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-block bg-gold-dark text-white font-semibold px-6 py-3 rounded-lg text-sm transition-all hover:bg-gold-light hover:-translate-y-px no-underline;
+  }
+
+  .btn-navy {
+    @apply inline-block bg-navy text-white font-semibold px-6 py-3 rounded-lg text-sm transition-all hover:bg-navy-mid no-underline;
+  }
+
+  .btn-outline-white {
+    @apply inline-block border border-white/40 text-white font-semibold px-6 py-3 rounded-lg text-sm transition-all hover:border-white hover:bg-white/10 no-underline;
+  }
+
+  .btn-outline-navy {
+    @apply inline-block border border-navy text-navy font-semibold px-6 py-3 rounded-lg text-sm transition-all hover:bg-navy hover:text-white no-underline;
+  }
+
+  .section-label {
+    @apply text-xs font-semibold tracking-widest uppercase text-gold-dark mb-2.5;
+  }
+
+  .section-title {
+    @apply font-playfair text-2xl md:text-3xl font-bold text-navy leading-tight mb-2.5;
+  }
+
+  .section-sub {
+    @apply text-sm text-[color:var(--text-muted)] max-w-xl mb-9 leading-relaxed;
+  }
+
+  .card {
+    @apply bg-white border border-[color:var(--border)] rounded-xl p-7;
+  }
+
+  .hero-badge {
+    @apply inline-block bg-gold-dark/20 border border-gold-dark/40 text-gold-light text-xs font-semibold tracking-widest uppercase px-3.5 py-1 rounded-full mb-5;
+  }
+
+  .trust-dot {
+    @apply w-[18px] h-[18px] bg-navy rounded-full flex items-center justify-content-center text-white text-[9px] flex-shrink-0;
+  }
+
+  .spec-value-good {
+    @apply font-semibold text-[color:var(--green)];
+  }
+}

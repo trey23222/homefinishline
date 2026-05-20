@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loan Programs for First-Time Homebuyers in Texas | Home Finish Line</title>
+<meta name="description" content="Compare FHA, VA, USDA, Conventional, and Down Payment Assistance loan programs for first-time homebuyers in San Antonio and Texas. Expert guidance from Trey Garza, NMLS# 2700813.">
+<link rel="canonical" href="https://resources.homefinishline.com/loan-programs.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "First-Time Homebuyer Loan Programs Texas",
+  "description": "Comparison of FHA, VA, USDA, Conventional, and Down Payment Assistance programs for Texas first-time homebuyers.",
+  "author": { "@type": "Person", "name": "Trey Garza", "identifier": "NMLS# 2700813" }
+}
+</script>
+<link rel="stylesheet" href="style.css">
+<style>
+.tab-bar {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 6px;
+}
+.tab-btn {
+  flex: 1;
+  min-width: 120px;
+  padding: 10px 16px;
+  background: none;
+  border: none;
+  border-radius: 7px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: .88rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: background .15s, color .15s;
+  white-space: nowrap;
+}
+.tab-btn:hover { background: var(--cream); color: var(--navy); }
+.tab-btn.active { background: var(--navy); color: #fff; }
+.tab-btn .tag {
+  display: inline-block;
+  font-size: .68rem;
+  padding: 2px 6px;
+  border-radius: 3px;
+  margin-left: 5px;
+  vertical-align: middle;
+}
+.tab-btn.active .tag { background: rgba(255,255,255,.15); color: rgba(255,255,255,.85); }
+.tab-btn:not(.active) .tag { background: var(--cream-dark); color: var(--text-muted); }
+.tab-panel { display: none; }
+.tab-panel.active { display: block; animation: fadeIn .2s ease; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+
+.program-layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 24px;
+  align-items: start;
+}
+.program-body h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+.program-body .tagline {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+  font-style: italic;
+}
+.program-body h4 {
+  font-size: .9rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin: 20px 0 10px;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  font-size: .78rem;
+}
+.program-body p { font-size: .93rem; color: var(--text-mid); line-height: 1.7; margin-bottom: 12px; }
+.pro-con { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 8px; }
+.pro-list, .con-list { list-style: none; }
+.pro-list li, .con-list li { font-size: .88rem; padding: 5px 0; display: flex; gap: 8px; align-items: flex-start; line-height: 1.5; }
+.pro-list li::before { content: '✓'; color: var(--green); font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+.con-list li::before { content: '·'; color: var(--text-muted); font-weight: 700; flex-shrink: 0; margin-top: 0; font-size: 1.2rem; line-height: 1.2; }
+
+.specs-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  position: sticky;
+  top: 80px;
+}
+.specs-card-header {
+  background: var(--navy);
+  color: #fff;
+  padding: 16px 20px;
+}
+.specs-card-header h4 { font-family: 'Playfair Display', serif; font-size: 1rem; margin-bottom: 2px; }
+.specs-card-header p { font-size: .8rem; color: rgba(255,255,255,.6); }
+.specs-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--border);
+  font-size: .88rem;
+}
+.specs-row:last-child { border-bottom: none; }
+.spec-label { color: var(--text-muted); }
+.spec-value { font-weight: 600; color: var(--navy); text-align: right; }
+.spec-value.good { color: var(--green); }
+.specs-cta { padding: 16px 20px; background: var(--cream); }
+
+.who-card {
+  background: #EBF0F8;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+}
+.who-card h4 { color: var(--navy); font-size: .85rem; font-weight: 600; margin-bottom: 10px; text-transform: uppercase; letter-spacing: .06em; }
+.who-card ul { list-style: none; }
+.who-card li { font-size: .88rem; color: var(--text-mid); padding: 4px 0; display: flex; gap: 8px; }
+.who-card li::before { content: '→'; color: var(--navy); flex-shrink: 0; }
+
+@media (max-width: 768px) {
+  .program-layout { grid-template-columns: 1fr; }
+  .specs-card { position: static; }
+  .pro-con { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div id="nav-placeholder"></div>
+
+<div class="breadcrumb">
+  <div class="container" style="padding:0 32px;">
+    <a href="index.html">Home</a><span>›</span> Loan Programs
+  </div>
+</div>
+
+<header class="hero" style="padding:52px 32px 48px;">
+  <div class="hero-badge">Texas · San Antonio · First-Time Buyers</div>
+  <h1>Find the <em>Right Loan</em> for Your Situation</h1>
+  <p>FHA, VA, USDA, Conventional, and Down Payment Assistance, compared clearly so you know exactly where you stand.</p>
+  <div class="hero-actions">
+    <a href="https://www.homefinishline.com/start#section-351a6831" class="btn-primary">Get My Free Buyer Guide →</a>
+    <a href="https://calendly.com/trey-garza-efinitymortgage/30min" class="btn-outline-white">Talk to Trey</a>
+  </div>
+</header>
+
+<section>
+  <div class="container">
+
+    <div class="section-label">Loan Programs</div>
+    <h2 class="section-title">Compare Loan Programs Side by Side</h2>
+    <p class="section-sub">Select any program below to see a full breakdown, who qualifies, what it costs, and whether it's right for you.</p>
+
+    <!-- TAB BAR -->
+    <div class="tab-bar">
+      <button class="tab-btn active" onclick="showTab('fha', this)" id="tab-fha">FHA <span class="tag">Most Common</span></button>
+      <button class="tab-btn" onclick="showTab('va', this)" id="tab-va">VA <span class="tag">Best for Veterans</span></button>
+      <button class="tab-btn" onclick="showTab('usda', this)" id="tab-usda">USDA <span class="tag">$0 Down</span></button>
+      <button class="tab-btn" onclick="showTab('conventional', this)" id="tab-conventional">Conventional</button>
+      <button class="tab-btn" onclick="showTab('dpa', this)" id="tab-dpa">DPA <span class="tag">Texas</span></button>
+    </div>
+
+    <!-- FHA -->
+    <div class="tab-panel active" id="panel-fha">
+      <div class="program-layout">
+        <div class="program-body">
+          <div style="display:inline-block;background:#EBF0F8;color:var(--navy);font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:4px;margin-bottom:14px;">Government-Backed · FHA</div>
+          <h3>FHA Loan</h3>
+          <p class="tagline">The most popular path into homeownership for first-time buyers, flexible credit, low down payment.</p>
+          <p>FHA loans are backed by the Federal Housing Administration, which means lenders take on less risk, and pass that flexibility along to you. If your credit isn't perfect or your savings are limited, FHA is almost always the conversation starter.</p>
+          <p>The trade-off is mortgage insurance. You'll pay an upfront MIP (1.75% of the loan amount, rolled into your loan) plus an annual premium. On a $250,000 loan, that's about $4,375 upfront and roughly $137/month. Unlike conventional loans, FHA mortgage insurance doesn't automatically drop off when you hit 20% equity, you'd need to refinance to remove it.</p>
+          <h4>Who This Works Best For</h4>
+          <div class="who-card">
+            <ul>
+              <li>Credit score between 580–639 (lower scores = higher down payment required)</li>
+              <li>Limited savings, need the lowest possible down payment</li>
+              <li>Higher debt-to-income ratio that conventional lenders won't approve</li>
+              <li>First-time buyer who wants maximum flexibility to qualify</li>
+            </ul>
+          </div>
+          <h4>Pros & Considerations</h4>
+          <div class="pro-con">
+            <ul class="pro-list">
+              <li>Only 3.5% down with 580+ credit score</li>
+              <li>More flexible debt-to-income guidelines</li>
+              <li>Gift funds allowed for down payment</li>
+              <li>Available across Texas statewide</li>
+              <li>Can be combined with Texas DPA programs</li>
+            </ul>
+            <ul class="con-list">
+              <li>Mortgage insurance required (MIP) for life of loan in most cases</li>
+              <li>Loan limits vary by county</li>
+              <li>Property must meet FHA condition standards</li>
+              <li>Slightly higher total cost vs conventional if credit is strong</li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div class="specs-card" id="fha">
+            <div class="specs-card-header">
+              <h4>FHA Loan, At a Glance</h4>
+              <p>Key numbers for 2026</p>
+            </div>
+            <div class="specs-row"><span class="spec-label">Min. Down Payment</span><span class="spec-value good">3.5%</span></div>
+            <div class="specs-row"><span class="spec-label">Min. Credit Score</span><span class="spec-value">580</span></div>
+            <div class="specs-row"><span class="spec-label">Mortgage Insurance</span><span class="spec-value">Required (MIP)</span></div>
+            <div class="specs-row"><span class="spec-label">Upfront MIP</span><span class="spec-value">1.75% of loan</span></div>
+            <div class="specs-row"><span class="spec-label">Annual MIP</span><span class="spec-value">~0.55%/yr</span></div>
+            <div class="specs-row"><span class="spec-label">DTI Limit</span><span class="spec-value">Up to 57%</span></div>
+            <div class="specs-row"><span class="spec-label">Bexar Co. Loan Limit</span><span class="spec-value">$524,225</span></div>
+            <div class="specs-cta">
+              <a href="https://treygarza.floify.com/apply" class="btn-navy" style="width:100%;text-align:center;display:block;">Check My FHA Eligibility →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VA -->
+    <div class="tab-panel" id="panel-va">
+      <div class="program-layout">
+        <div class="program-body">
+          <div style="display:inline-block;background:#FBF3E2;color:#7A5A0F;font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:4px;margin-bottom:14px;">Military · Veterans · Surviving Spouses</div>
+          <h3>VA Loan</h3>
+          <p class="tagline">The best home loan on the market, full stop. If you've earned it, use it.</p>
+          <p>The VA loan is a benefit earned through military service, and it's genuinely the best loan program available. No down payment, no monthly mortgage insurance, competitive rates, and flexible qualification guidelines. San Antonio has one of the largest veteran populations in the country, and many buyers here don't realize how powerful this benefit is.</p>
+          <p>You pay a one-time VA funding fee (typically 2.15% for first use, rolled into the loan), but no monthly PMI, which alone saves hundreds per month compared to a conventional loan with less than 20% down. Veterans with a service-connected disability rating may be exempt from the funding fee entirely.</p>
+          <h4>Who Qualifies</h4>
+          <div class="who-card" style="background:#FBF3E2;">
+            <ul>
+              <li>Active-duty service members (90+ days of service)</li>
+              <li>Veterans who served and were honorably discharged</li>
+              <li>National Guard / Reserve members (6+ years, or 90 days active duty)</li>
+              <li>Eligible surviving spouses of veterans</li>
+            </ul>
+          </div>
+          <h4>Pros & Considerations</h4>
+          <div class="pro-con">
+            <ul class="pro-list">
+              <li>Zero down payment required</li>
+              <li>No monthly mortgage insurance (PMI/MIP)</li>
+              <li>No income limits</li>
+              <li>No loan limit for most veterans (full entitlement)</li>
+              <li>Competitive interest rates</li>
+              <li>Can be reused multiple times</li>
+            </ul>
+            <ul class="con-list">
+              <li>One-time funding fee (waived for disability-rated veterans)</li>
+              <li>Must be primary residence, no investment properties</li>
+              <li>Property must meet VA minimum property requirements</li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div class="specs-card">
+            <div class="specs-card-header" style="background:#7A5A0F;">
+              <h4>VA Loan, At a Glance</h4>
+              <p>Key numbers for 2026</p>
+            </div>
+            <div class="specs-row"><span class="spec-label">Down Payment</span><span class="spec-value good">$0 Required</span></div>
+            <div class="specs-row"><span class="spec-label">Monthly Mortgage Insurance</span><span class="spec-value good">None</span></div>
+            <div class="specs-row"><span class="spec-label">Funding Fee (first use)</span><span class="spec-value">2.15%</span></div>
+            <div class="specs-row"><span class="spec-label">Disability Exemption</span><span class="spec-value good">Yes, fee waived</span></div>
+            <div class="specs-row"><span class="spec-label">Income Limits</span><span class="spec-value good">None</span></div>
+            <div class="specs-row"><span class="spec-label">Loan Limit</span><span class="spec-value good">None (full entitlement)</span></div>
+            <div class="specs-row"><span class="spec-label">Min. Credit Score</span><span class="spec-value">Flexible (620 typical)</span></div>
+            <div class="specs-cta">
+              <a href="https://treygarza.floify.com/apply" class="btn-navy" style="width:100%;text-align:center;display:block;">Check My VA Eligibility →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- USDA -->
+    <div class="tab-panel" id="panel-usda">
+      <div class="program-layout">
+        <div class="program-body">
+          <div style="display:inline-block;background:var(--green-light);color:var(--green);font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:4px;margin-bottom:14px;">Rural · Suburban · Zero Down</div>
+          <h3>USDA Loan</h3>
+          <p class="tagline">Zero down payment for eligible Texas communities, and more areas qualify than most buyers expect.</p>
+          <p>The USDA Rural Development loan is one of the most underused programs in Texas. It offers 100% financing, no down payment, for homes in eligible rural and suburban areas. The key misconception is that "rural" means farmland. Many San Antonio suburbs, bedroom communities, and smaller Texas cities qualify.</p>
+          <p>There are two forms of mortgage insurance: an upfront guarantee fee (1% of the loan, rolled in) and an annual fee (0.35%/year). That annual rate is significantly lower than FHA's MIP, making USDA one of the most affordable options for buyers who qualify, both on rate and monthly cost.</p>
+          <h4>Does My Area Qualify?</h4>
+          <div class="who-card" style="background:var(--green-light);">
+            <ul>
+              <li>Use the USDA eligibility map at eligibility.sc.egov.usda.gov to check any address</li>
+              <li>Many communities 30–60 miles outside San Antonio qualify</li>
+              <li>Income limits apply, typically 115% of the area median income</li>
+              <li>Must be your primary residence</li>
+            </ul>
+          </div>
+          <h4>Pros & Considerations</h4>
+          <div class="pro-con">
+            <ul class="pro-list">
+              <li>Zero down payment</li>
+              <li>Annual fee lower than FHA MIP</li>
+              <li>Competitive interest rates</li>
+              <li>Flexible credit guidelines (640+ typical)</li>
+              <li>Can finance closing costs into loan in some cases</li>
+            </ul>
+            <ul class="con-list">
+              <li>Geographic restrictions, must be in eligible area</li>
+              <li>Income limits apply</li>
+              <li>Primary residence only</li>
+              <li>Property must meet USDA standards</li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div class="specs-card">
+            <div class="specs-card-header" style="background:var(--green);">
+              <h4>USDA Loan, At a Glance</h4>
+              <p>Key numbers for 2026</p>
+            </div>
+            <div class="specs-row"><span class="spec-label">Down Payment</span><span class="spec-value good">$0 Required</span></div>
+            <div class="specs-row"><span class="spec-label">Guarantee Fee (upfront)</span><span class="spec-value">1.0% of loan</span></div>
+            <div class="specs-row"><span class="spec-label">Annual Fee</span><span class="spec-value good">0.35%/yr</span></div>
+            <div class="specs-row"><span class="spec-label">Min. Credit Score</span><span class="spec-value">640 typical</span></div>
+            <div class="specs-row"><span class="spec-label">Income Limits</span><span class="spec-value">Yes (115% AMI)</span></div>
+            <div class="specs-row"><span class="spec-label">Geographic Limit</span><span class="spec-value">Eligible areas only</span></div>
+            <div class="specs-cta">
+              <a href="https://treygarza.floify.com/apply" class="btn-navy" style="width:100%;text-align:center;display:block;">Check My USDA Eligibility →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONVENTIONAL -->
+    <div class="tab-panel" id="panel-conventional">
+      <div class="program-layout">
+        <div class="program-body">
+          <div style="display:inline-block;background:#EBF0F8;color:var(--navy);font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:4px;margin-bottom:14px;">Conventional · Fannie Mae · Freddie Mac</div>
+          <h3>Conventional Loan</h3>
+          <p class="tagline">The best choice once your credit is solid, lower long-term cost and no lifetime mortgage insurance.</p>
+          <p>Conventional loans aren't backed by the government, they're sold to Fannie Mae or Freddie Mac on the secondary market. That means tighter qualification standards, but also better pricing for buyers with good credit and a lower total cost over time.</p>
+          <p>The biggest advantage over FHA: mortgage insurance (PMI) automatically cancels once you reach 80% loan-to-value. On FHA, you'd need to refinance. If your credit is 700+ and you have a modest down payment, conventional often wins on total cost. Fannie's HomeReady and Freddie's Home Possible programs allow just 3% down for first-time buyers with income at or below 80% of the area median.</p>
+          <h4>Who This Works Best For</h4>
+          <div class="who-card">
+            <ul>
+              <li>Credit score of 680+ (best pricing at 740+)</li>
+              <li>Stable employment and clean credit history</li>
+              <li>Buyer who plans to stay in the home long enough to see PMI drop off</li>
+              <li>Income at or below 80% AMI (for HomeReady / Home Possible 3% down)</li>
+            </ul>
+          </div>
+          <h4>Pros & Considerations</h4>
+          <div class="pro-con">
+            <ul class="pro-list">
+              <li>PMI drops automatically at 80% LTV</li>
+              <li>As low as 3% down (HomeReady / Home Possible)</li>
+              <li>Best rates for buyers with 740+ credit</li>
+              <li>No upfront mortgage insurance fee</li>
+              <li>More flexibility on property type</li>
+            </ul>
+            <ul class="con-list">
+              <li>Stricter credit requirements (620+ minimum, 680+ ideal)</li>
+              <li>PMI required if less than 20% down</li>
+              <li>Less flexible DTI guidelines vs FHA</li>
+              <li>Lower credit score = significantly higher rate</li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div class="specs-card">
+            <div class="specs-card-header">
+              <h4>Conventional, At a Glance</h4>
+              <p>Key numbers for 2026</p>
+            </div>
+            <div class="specs-row"><span class="spec-label">Min. Down Payment</span><span class="spec-value good">3% (HomeReady)</span></div>
+            <div class="specs-row"><span class="spec-label">Min. Credit Score</span><span class="spec-value">620 (680+ ideal)</span></div>
+            <div class="specs-row"><span class="spec-label">PMI</span><span class="spec-value">Cancels at 80% LTV</span></div>
+            <div class="specs-row"><span class="spec-label">Upfront Fee</span><span class="spec-value good">None</span></div>
+            <div class="specs-row"><span class="spec-label">Conforming Loan Limit</span><span class="spec-value">$806,500 (2026)</span></div>
+            <div class="specs-row"><span class="spec-label">DTI Limit</span><span class="spec-value">Up to 50% (DU approved)</span></div>
+            <div class="specs-cta">
+              <a href="https://treygarza.floify.com/apply" class="btn-navy" style="width:100%;text-align:center;display:block;">Check My Conventional Options →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DPA -->
+    <div class="tab-panel" id="panel-dpa">
+      <div class="program-layout">
+        <div class="program-body">
+          <div style="display:inline-block;background:#FBF3E2;color:#7A5A0F;font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:4px;margin-bottom:14px;">Texas · TDHCA · TSAHC</div>
+          <h3>Down Payment Assistance</h3>
+          <p class="tagline">Up to 5% toward your down payment and closing costs, programs many Texas buyers don't know they qualify for.</p>
+          <p>Texas runs some of the best down payment assistance programs in the country through the Texas Department of Housing and Community Affairs (TDHCA) and the Texas State Affordable Housing Corporation (TSAHC). These programs aren't loans from a payday lender, they're state-administered programs that pair with your FHA, VA, USDA, or conventional mortgage.</p>
+          <p>The assistance comes as either a grant (no repayment ever) or a forgivable second lien (forgiven after 3 years if you stay in the home). Combined with an FHA loan, many buyers close with little to nothing out of pocket.</p>
+          <h4>Key Texas Programs</h4>
+          <div class="who-card" style="background:#FBF3E2;">
+            <ul>
+              <li><strong>My First Texas Home (TDHCA)</strong> — 30-yr low-rate mortgage + up to 5% DPA. For first-time buyers or buyers who haven't owned in 3 years.</li>
+              <li><strong>Home Sweet Texas (TDHCA)</strong> — Similar structure, broader income limits.</li>
+              <li><strong>My Choice Texas Home (TDHCA)</strong> — Available to both first-time and repeat buyers.</li>
+              <li><strong>Homes for Texas Heroes (TSAHC)</strong> — Up to 5% grant or forgivable lien for teachers, nurses, first responders, and veterans.</li>
+            </ul>
+          </div>
+          <h4>Pros & Considerations</h4>
+          <div class="pro-con">
+            <ul class="pro-list">
+              <li>Up to 5% toward down payment + closing costs</li>
+              <li>Grant option, no repayment required</li>
+              <li>Stacks with FHA, VA, USDA, or conventional</li>
+              <li>Competitive interest rates built in</li>
+              <li>Heroes program covers many professions</li>
+            </ul>
+            <ul class="con-list">
+              <li>Income limits apply (area-based)</li>
+              <li>Homebuyer education course required</li>
+              <li>Must be primary residence</li>
+              <li>Slightly higher rate vs standalone loan in some cases</li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div class="specs-card">
+            <div class="specs-card-header" style="background:#7A5A0F;">
+              <h4>Texas DPA, At a Glance</h4>
+              <p>Key numbers for 2026</p>
+            </div>
+            <div class="specs-row"><span class="spec-label">Max Assistance</span><span class="spec-value good">Up to 5%</span></div>
+            <div class="specs-row"><span class="spec-label">Repayment</span><span class="spec-value good">Grant, none required</span></div>
+            <div class="specs-row"><span class="spec-label">Loan Types</span><span class="spec-value">FHA, VA, USDA, Conv.</span></div>
+            <div class="specs-row"><span class="spec-label">Income Limits</span><span class="spec-value">Yes (area-based)</span></div>
+            <div class="specs-row"><span class="spec-label">Homebuyer Ed</span><span class="spec-value">Required (free online)</span></div>
+            <div class="specs-row"><span class="spec-label">Programs</span><span class="spec-value">TDHCA · TSAHC</span></div>
+            <div class="specs-cta">
+              <a href="dpa.html" class="btn-navy" style="width:100%;text-align:center;display:block;margin-bottom:8px;">See Full DPA Guide →</a>
+              <a href="https://treygarza.floify.com/apply" class="btn-primary" style="width:100%;text-align:center;display:block;">Check My Eligibility →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- QUICK COMPARE TABLE -->
+<section style="background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:48px 0;">
+  <div class="container">
+    <div class="section-label">Quick Reference</div>
+    <h2 class="section-title">All Programs Side by Side</h2>
+    <div style="overflow-x:auto;">
+      <table style="width:100%;border-collapse:collapse;font-size:.88rem;min-width:600px;">
+        <thead>
+          <tr style="background:var(--navy);color:#fff;">
+            <th style="padding:12px 16px;text-align:left;font-weight:600;">Program</th>
+            <th style="padding:12px 16px;text-align:center;font-weight:600;">Down Payment</th>
+            <th style="padding:12px 16px;text-align:center;font-weight:600;">Min. Credit</th>
+            <th style="padding:12px 16px;text-align:center;font-weight:600;">Mortgage Insurance</th>
+            <th style="padding:12px 16px;text-align:center;font-weight:600;">Best For</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:12px 16px;font-weight:600;color:var(--navy);">FHA</td>
+            <td style="padding:12px 16px;text-align:center;">3.5%</td>
+            <td style="padding:12px 16px;text-align:center;">580</td>
+            <td style="padding:12px 16px;text-align:center;">Required (life of loan)</td>
+            <td style="padding:12px 16px;text-align:center;color:var(--text-muted);">Lower credit scores</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);background:var(--cream);">
+            <td style="padding:12px 16px;font-weight:600;color:var(--navy);">VA</td>
+            <td style="padding:12px 16px;text-align:center;color:var(--green);font-weight:600;">$0</td>
+            <td style="padding:12px 16px;text-align:center;">Flexible</td>
+            <td style="padding:12px 16px;text-align:center;color:var(--green);font-weight:600;">None</td>
+            <td style="padding:12px 16px;text-align:center;color:var(--text-muted);">Veterans & military</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:12px 16px;font-weight:600;color:var(--navy);">USDA</td>
+            <td style="padding:12px 16px;text-align:center;color:var(--green);font-weight:600;">$0</td>
+            <td style="padding:12px 16px;text-align:center;">640</td>
+            <td style="padding:12px 16px;text-align:center;">0.35%/yr annual</td>
+            <td style="padding:12px 16px;text-align:center;color:var(--text-muted);">Rural/suburban areas</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);background:var(--cream);">
+            <td style="padding:12px 16px;font-weight:600;color:var(--navy);">Conventional</td>
+            <td style="padding:12px 16px;text-align:center;">3–20%</td>
+            <td style="padding:12px 16px;text-align:center;">620</td>
+            <td style="padding:12px 16px;text-align:center;">Drops at 80% LTV</td>
+            <td style="padding:12px 16px;text-align:center;color:var(--text-muted);">Strong credit 680+</td>
+          </tr>
+          <tr>
+            <td style="padding:12px 16px;font-weight:600;color:var(--navy);">Texas DPA</td>
+            <td style="padding:12px 16px;text-align:center;color:var(--green);font-weight:600;">Up to 5% covered</td>
+            <td style="padding:12px 16px;text-align:center;">620</td>
+            <td style="padding:12px 16px;text-align:center;">Depends on base loan</td>
+            <td style="padding:12px 16px;text-align:center;color:var(--text-muted);">Limited savings</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-strip">
+  <div class="container">
+    <div class="cta-inner">
+      <div class="cta-text">
+        <h2>Not Sure Which Loan Fits?</h2>
+        <p>A 10-minute conversation tells you exactly where you stand, no cost, no obligation.</p>
+      </div>
+      <div class="cta-actions">
+        <a href="https://treygarza.floify.com/apply" class="btn-navy">Start My Pre-Approval →</a>
+        <a href="https://calendly.com/trey-garza-efinitymortgage/30min" class="btn-outline-navy">Book a Call</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="footer-placeholder"></div>
+<script src="shared.js"></script>
+<script>
+function showTab(id, btn) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('panel-' + id).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
+</body>
+</html>

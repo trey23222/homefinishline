@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mortgage Calculator San Antonio Texas | Estimate Your Monthly Payment | Home Finish Line</title>
+<meta name="description" content="Free mortgage calculator for first-time homebuyers in San Antonio and Texas. Estimate your monthly payment, see a full amortization breakdown, and compare loan options. Trey Garza, NMLS# 2700813.">
+<link rel="canonical" href="https://resources.homefinishline.com/calculator.html">
+<link rel="stylesheet" href="style.css">
+<style>
+.calc-layout {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 28px;
+  align-items: start;
+}
+.calc-panel {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  position: sticky;
+  top: 80px;
+}
+.calc-panel-header {
+  background: var(--navy);
+  padding: 20px 24px;
+  color: #fff;
+}
+.calc-panel-header h3 { font-family: 'Playfair Display', serif; font-size: 1.05rem; margin-bottom: 2px; }
+.calc-panel-header p { font-size: .8rem; color: rgba(255,255,255,.6); }
+.calc-body { padding: 24px; }
+.form-group { margin-bottom: 18px; }
+.form-group label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: .83rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+.form-group label span { font-weight: 400; color: var(--text-muted); font-size: .82rem; text-transform: none; letter-spacing: 0; }
+.form-group input[type="range"] {
+  width: 100%;
+  accent-color: var(--navy);
+  height: 4px;
+  cursor: pointer;
+}
+.form-group input[type="text"], .form-group select {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: .9rem;
+  color: var(--text);
+  background: var(--cream);
+  outline: none;
+  transition: border-color .15s;
+}
+.form-group input:focus, .form-group select:focus { border-color: var(--navy); background: var(--white); }
+.range-labels { display: flex; justify-content: space-between; font-size: .75rem; color: var(--text-muted); margin-top: 4px; }
+
+.result-hero {
+  background: var(--navy);
+  border-radius: var(--radius);
+  padding: 28px;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.result-hero .label { font-size: .78rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.6); margin-bottom: 6px; }
+.result-hero .amount { font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 700; color: #fff; line-height: 1; margin-bottom: 4px; }
+.result-hero .sub { font-size: .85rem; color: rgba(255,255,255,.6); }
+
+.result-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.result-item {
+  background: var(--cream);
+  border-radius: 8px;
+  padding: 14px 16px;
+}
+.result-item .r-label { font-size: .75rem; color: var(--text-muted); font-weight: 500; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 4px; }
+.result-item .r-value { font-size: 1.1rem; font-weight: 600; color: var(--navy); font-family: 'Playfair Display', serif; }
+
+.donut-wrap { display: flex; align-items: center; gap: 20px; margin-bottom: 20px; }
+.legend { display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.legend-item { display: flex; align-items: center; gap: 8px; font-size: .85rem; }
+.legend-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
+
+.amort-table { width: 100%; border-collapse: collapse; font-size: .82rem; margin-top: 16px; }
+.amort-table th { background: var(--navy); color: #fff; padding: 8px 12px; text-align: right; font-weight: 600; }
+.amort-table th:first-child { text-align: left; }
+.amort-table td { padding: 8px 12px; border-bottom: 1px solid var(--border); text-align: right; color: var(--text-mid); }
+.amort-table td:first-child { text-align: left; font-weight: 500; color: var(--navy); }
+.amort-table tr:nth-child(even) { background: var(--cream); }
+
+.disclaimer-box {
+  background: var(--cream-dark);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 16px;
+  font-size: .8rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-top: 16px;
+}
+
+@media (max-width: 900px) {
+  .calc-layout { grid-template-columns: 1fr; }
+  .calc-panel { position: static; }
+  .result-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) {
+  .result-grid { grid-template-columns: 1fr; }
+  .donut-wrap { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<div id="nav-placeholder"></div>
+
+<div class="breadcrumb">
+  <div class="container" style="padding:0 32px;">
+    <a href="index.html">Home</a><span>›</span> Mortgage Calculator
+  </div>
+</div>
+
+<header class="hero" style="padding:48px 32px 40px;">
+  <div class="hero-badge">Free Tool · San Antonio & Texas · First-Time Buyers</div>
+  <h1>Estimate Your Monthly <em>Mortgage Payment</em></h1>
+  <p>Adjust home price, down payment, rate, and term. See your full payment breakdown instantly.</p>
+</header>
+
+<section>
+  <div class="container">
+    <div class="calc-layout">
+
+      <!-- INPUTS -->
+      <div class="calc-panel">
+        <div class="calc-panel-header">
+          <h3>Payment Calculator</h3>
+          <p>Adjust the sliders to see your estimate update</p>
+        </div>
+        <div class="calc-body">
+
+          <div class="form-group">
+            <label>Home Price <span id="price-display">$300,000</span></label>
+            <input type="range" id="price" min="50000" max="5000000" step="5000" value="300000" oninput="updateCalc()">
+            <div class="range-labels"><span>$50k</span><span>$5M</span></div>
+          </div>
+
+          <div class="form-group">
+            <label>Down Payment <span id="dp-display">10% — $30,000</span></label>
+            <input type="range" id="downpayment" min="0" max="80" step="0.5" value="10" oninput="updateCalc()">
+            <div class="range-labels"><span>0%</span><span>80%</span></div>
+          </div>
+
+          <div class="form-group">
+            <label>Interest Rate <span id="rate-display">6.75%</span></label>
+            <input type="range" id="rate" min="1" max="20" step="0.125" value="6.75" oninput="updateCalc()">
+            <div class="range-labels"><span>1.0%</span><span>20.0%</span></div>
+          </div>
+
+          <div class="form-group">
+            <label>Loan Term <span id="term-display">30 years</span></label>
+            <input type="range" id="term" min="10" max="30" step="5" value="30" oninput="updateCalc()">
+            <div class="range-labels"><span>10 yr</span><span>30 yr</span></div>
+          </div>
+
+          <div class="form-group">
+            <label>Loan Type <span></span></label>
+            <select id="loantype" onchange="onLoanTypeChange()">
+              <option value="conv">Conventional</option>
+              <option value="fha">FHA</option>
+              <option value="va">VA (no PMI)</option>
+              <option value="usda">USDA</option>
+            </select>
+          </div>
+
+          <div class="form-group" id="pmi-group">
+            <label>Est. Property Tax Rate <span id="tax-display">1.8%/yr</span></label>
+            <input type="range" id="taxrate" min="0.5" max="3.5" step="0.1" value="1.8" oninput="updateCalc()">
+            <div class="range-labels"><span>0.5%</span><span>3.5%</span></div>
+          </div>
+
+          <div style="padding-top:8px;border-top:1px solid var(--border);">
+            <a href="https://treygarza.floify.com/apply" class="btn-navy" style="display:block;text-align:center;width:100%;">Get Your Real Rate, Start Pre-Approval →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- RESULTS -->
+      <div>
+        <div class="result-hero">
+          <div class="label">Estimated Monthly Payment</div>
+          <div class="amount" id="monthly-total">$—</div>
+          <div class="sub">Principal + Interest + Taxes + Insurance + MI</div>
+        </div>
+
+        <div class="result-grid">
+          <div class="result-item">
+            <div class="r-label">P&amp;I Payment</div>
+            <div class="r-value" id="pi-payment">$—</div>
+          </div>
+          <div class="result-item">
+            <div class="r-label">Est. Property Tax</div>
+            <div class="r-value" id="tax-payment">$—</div>
+          </div>
+          <div class="result-item">
+            <div class="r-label">Est. Insurance</div>
+            <div class="r-value" id="ins-payment">$—</div>
+          </div>
+          <div class="result-item" id="mi-item">
+            <div class="r-label">Mortgage Insurance</div>
+            <div class="r-value" id="mi-payment">$—</div>
+          </div>
+        </div>
+
+        <div class="result-grid">
+          <div class="result-item">
+            <div class="r-label">Loan Amount</div>
+            <div class="r-value" id="loan-amount">$—</div>
+          </div>
+          <div class="result-item">
+            <div class="r-label">Down Payment</div>
+            <div class="r-value" id="dp-amount">$—</div>
+          </div>
+          <div class="result-item">
+            <div class="r-label">Total Interest Paid</div>
+            <div class="r-value" id="total-interest">$—</div>
+          </div>
+          <div class="result-item">
+            <div class="r-label">Total Cost of Loan</div>
+            <div class="r-value" id="total-cost">$—</div>
+          </div>
+        </div>
+
+        <!-- DONUT CHART -->
+        <div class="card" style="margin-bottom:20px;">
+          <div style="font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;">Payment Breakdown</div>
+          <div class="donut-wrap">
+            <canvas id="donut" width="140" height="140" style="flex-shrink:0;"></canvas>
+            <div class="legend" id="legend"></div>
+          </div>
+        </div>
+
+        <!-- AMORTIZATION -->
+        <div class="card">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px;">
+            <div style="font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);">Yearly Amortization</div>
+            <div style="font-size:.8rem;color:var(--text-muted);">How your balance decreases over time</div>
+          </div>
+          <div style="overflow-x:auto;">
+            <table class="amort-table" id="amort-table">
+              <thead><tr>
+                <th>Year</th>
+                <th>Principal</th>
+                <th>Interest</th>
+                <th>Balance</th>
+              </tr></thead>
+              <tbody id="amort-body"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="disclaimer-box">
+          <strong>Estimates only.</strong> This calculator provides approximate figures for planning purposes. Actual payment will vary based on your exact interest rate, loan amount, credit score, insurance costs, and property taxes. Contact Trey Garza for a precise quote based on your specific situation. Trey Garza NMLS# 2700813 | Efinity Mortgage (NMLS# 1043983) | Licensed by the Texas Department of Savings and Mortgage Lending. This is not a commitment to lend. All loans are subject to credit approval and property appraisal. Terms and Conditions apply. Equal Housing Opportunity.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-strip" style="margin-top:32px;">
+  <div class="container">
+    <div class="cta-inner">
+      <div class="cta-text">
+        <h2>Like What You See?</h2>
+        <p>Get your actual rate and payment locked in, start your free pre-approval to find out exactly what you qualify for.</p>
+      </div>
+      <div class="cta-actions">
+        <a href="https://treygarza.floify.com/apply" class="btn-navy">Start My Free Pre-Approval</a>
+        <a href="https://calendly.com/trey-garza-efinitymortgage/30min" class="btn-outline-navy">Schedule a Call</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="footer-placeholder"></div>
+<script src="shared.js"></script>
+<script>
+function onLoanTypeChange() {
+  const lt = document.getElementById('loantype').value;
+  const dpSlider = document.getElementById('downpayment');
+  if (lt === 'va' || lt === 'usda') {
+    dpSlider.value = 0;
+  }
+  updateCalc();
+}
+
+function fmt(n) { return '$' + Math.round(n).toLocaleString(); }
+function fmtK(n) { return n >= 1000 ? '$' + (n/1000).toFixed(0) + 'k' : fmt(n); }
+
+function updateCalc() {
+  const price = +document.getElementById('price').value;
+  const loanType = document.getElementById('loantype').value;
+  const rate = +document.getElementById('rate').value;
+  const term = +document.getElementById('term').value;
+  const taxRate = +document.getElementById('taxrate').value;
+  const dpSlider = document.getElementById('downpayment');
+
+  // For VA and USDA, default to 0% down when first selected but keep slider free
+  const dpPct = +dpSlider.value;
+
+  // Display labels
+  document.getElementById('price-display').textContent = fmt(price);
+  const dpAmt = price * dpPct / 100;
+  document.getElementById('dp-display').textContent = dpPct.toFixed(1) + '% — ' + fmt(dpAmt);
+  document.getElementById('rate-display').textContent = rate.toFixed(3).replace(/\.?0+$/, '') + '%';
+  document.getElementById('term-display').textContent = term + ' years';
+  document.getElementById('tax-display').textContent = taxRate.toFixed(1) + '%/yr';
+
+  // Loan amount
+  let loanAmt = price - dpAmt;
+
+  // Upfront fees rolled into loan
+  let upfront = 0;
+  if (loanType === 'fha') upfront = loanAmt * 0.0175;
+  if (loanType === 'va') upfront = loanAmt * 0.0215;
+  if (loanType === 'usda') upfront = loanAmt * 0.01;
+  loanAmt += upfront;
+
+  // Monthly P&I
+  const mo = rate / 100 / 12;
+  const n = term * 12;
+  const pi = mo === 0 ? loanAmt / n : loanAmt * mo * Math.pow(1+mo, n) / (Math.pow(1+mo, n) - 1);
+
+  // Monthly MI
+  let mi = 0;
+  const ltv = loanAmt / price;
+  if (loanType === 'fha') mi = loanAmt * 0.0055 / 12;
+  else if (loanType === 'usda') mi = loanAmt * 0.0035 / 12;
+  else if (loanType === 'conv' && ltv > 0.80) mi = loanAmt * 0.006 / 12;
+
+  // Tax & insurance
+  const tax = price * taxRate / 100 / 12;
+  const ins = price * 0.006 / 12; // ~0.6% annually
+
+  const total = pi + mi + tax + ins;
+
+  document.getElementById('monthly-total').textContent = fmt(total);
+  document.getElementById('pi-payment').textContent = fmt(pi);
+  document.getElementById('tax-payment').textContent = fmt(tax);
+  document.getElementById('ins-payment').textContent = fmt(ins);
+  document.getElementById('mi-payment').textContent = mi > 0 ? fmt(mi) : 'None';
+  document.getElementById('mi-item').style.opacity = mi > 0 ? '1' : '0.5';
+  document.getElementById('loan-amount').textContent = fmt(loanAmt);
+  document.getElementById('dp-amount').textContent = fmt(dpAmt);
+
+  const totalPaid = pi * n;
+  const totalInterest = totalPaid - loanAmt;
+  document.getElementById('total-interest').textContent = fmt(Math.max(0, totalInterest));
+  document.getElementById('total-cost').textContent = fmt(totalPaid + upfront);
+
+  // Donut
+  const colors = ['#0D2240','#C8952A','#2A7A4B','#8BA5C4'];
+  const slices = [
+    { label: 'Principal & Interest', value: pi, color: colors[0] },
+    { label: 'Property Tax', value: tax, color: colors[1] },
+    { label: 'Insurance', value: ins, color: colors[2] },
+  ];
+  if (mi > 0) slices.push({ label: 'Mortgage Insurance', value: mi, color: '#E0C98A' });
+  drawDonut(slices, total);
+
+  // Amortization table (show every year)
+  let bal = loanAmt;
+  let rows = '';
+  for (let y = 1; y <= Math.min(term, 30); y++) {
+    let yearPrincipal = 0, yearInterest = 0;
+    for (let m = 0; m < 12; m++) {
+      const int = bal * mo;
+      const prin = pi - int;
+      yearInterest += int;
+      yearPrincipal += prin;
+      bal -= prin;
+      if (bal < 0) bal = 0;
+    }
+    rows += `<tr>
+      <td>${y}</td>
+      <td>${fmt(yearPrincipal)}</td>
+      <td>${fmt(yearInterest)}</td>
+      <td>${fmt(Math.max(0, bal))}</td>
+    </tr>`;
+    if (bal <= 0) break;
+  }
+  document.getElementById('amort-body').innerHTML = rows;
+}
+
+function drawDonut(slices, total) {
+  const canvas = document.getElementById('donut');
+  const ctx = canvas.getContext('2d');
+  const cx = 70, cy = 70, r = 55, inner = 34;
+  ctx.clearRect(0, 0, 140, 140);
+  let start = -Math.PI / 2;
+  slices.forEach(s => {
+    const angle = (s.value / total) * 2 * Math.PI;
+    ctx.beginPath();
+    ctx.moveTo(cx, cy);
+    ctx.arc(cx, cy, r, start, start + angle);
+    ctx.closePath();
+    ctx.fillStyle = s.color;
+    ctx.fill();
+    start += angle;
+  });
+  ctx.beginPath();
+  ctx.arc(cx, cy, inner, 0, 2 * Math.PI);
+  ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--white') || '#fff';
+  ctx.fill();
+
+  const legend = document.getElementById('legend');
+  legend.innerHTML = slices.map(s =>
+    `<div class="legend-item"><div class="legend-dot" style="background:${s.color}"></div><span style="font-size:.82rem;color:var(--text-mid)">${s.label}</span></div>`
+  ).join('');
+}
+
+updateCalc();
+</script>
+</body>
+</html>
