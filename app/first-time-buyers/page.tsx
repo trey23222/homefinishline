@@ -54,9 +54,12 @@ export default function FirstTimeBuyersPage() {
       <TrustBar />
 
       {/* QUICK NAV */}
-      <nav className="bg-white border-b border-[color:var(--border)] sticky top-16 z-40">
-        <div className="max-w-5xl mx-auto px-8 overflow-x-auto">
-          <div className="flex gap-0 whitespace-nowrap">
+      <nav
+        className="bg-white/95 backdrop-blur-sm border-b border-[color:var(--border)] sticky top-16 z-40"
+        style={{ boxShadow: '0 2px 12px rgba(13,34,64,0.07)' }}
+      >
+        <div className="max-w-5xl mx-auto px-6 overflow-x-auto scrollbar-none">
+          <div className="flex whitespace-nowrap gap-1 py-1">
             {[
               { href: '#loan-programs', label: 'Loan Programs' },
               { href: '#down-payment-assistance', label: 'Down Payment Help' },
@@ -67,9 +70,10 @@ export default function FirstTimeBuyersPage() {
               <a
                 key={item.href}
                 href={item.href}
-                className="text-sm font-medium text-[color:var(--text-muted)] px-4 py-4 no-underline border-b-2 border-transparent hover:text-navy hover:border-gold-dark transition-all"
+                className="text-sm font-medium text-[color:var(--text-muted)] px-4 py-3 no-underline rounded-md transition-all hover:text-navy hover:bg-navy/5 relative group"
               >
                 {item.label}
+                <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-gold-dark rounded-full scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
               </a>
             ))}
           </div>

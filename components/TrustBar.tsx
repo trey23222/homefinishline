@@ -1,7 +1,8 @@
 const items = [
   'Licensed Texas Loan Officer',
-  'NMLS# 2700813',
+  'VA Loan Specialist',
   'FHA · VA · USDA · Conventional',
+  'Serving San Antonio & Texas',
   'Texas Down Payment Assistance',
   'Efinity Mortgage · San Antonio',
 ]

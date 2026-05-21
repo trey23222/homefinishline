@@ -18,7 +18,7 @@ export default function Footer() {
           <Link href="/first-time-buyers" className="text-white/50 no-underline hover:text-white/85 transition-colors">First-Time Buyers</Link>
           <Link href="/about" className="text-white/50 no-underline hover:text-white/85 transition-colors">About Trey</Link>
           <Link href="/contact" className="text-white/50 no-underline hover:text-white/85 transition-colors">Contact</Link>
-          <Link href="/blog" className="text-white/50 no-underline hover:text-white/85 transition-colors">Blog</Link>
+          <Link href="/blog" className="text-white/50 no-underline hover:text-white/85 transition-colors">Resources</Link>
         </div>
 
         <div className="flex flex-col gap-1.5 min-w-[140px]">

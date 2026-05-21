@@ -3,11 +3,11 @@ import Link from 'next/link'
 import { getAllPosts } from '@/lib/blog'
 
 export const metadata: Metadata = {
-  title: 'Mortgage & VA Loan Blog | San Antonio TX | Home Finish Line',
+  title: 'Mortgage Resources & VA Loan Guides | San Antonio TX | Home Finish Line',
   description: 'Expert mortgage tips, VA loan guides, and San Antonio real estate insights from Trey Garza, Licensed Loan Officer NMLS# 2700813.',
-  keywords: ['VA loan blog San Antonio', 'mortgage tips Texas', 'home buying blog San Antonio', 'first time buyer guide Texas'],
+  keywords: ['VA loan resources San Antonio', 'mortgage tips Texas', 'home buying guide San Antonio', 'first time buyer guide Texas'],
   openGraph: {
-    title: 'Mortgage & VA Loan Blog | San Antonio TX | Home Finish Line',
+    title: 'Mortgage Resources & VA Loan Guides | San Antonio TX | Home Finish Line',
     description: 'Expert mortgage tips and VA loan guides from Trey Garza, San Antonio VA Loan Specialist.',
     url: 'https://homefinishline.com/blog',
   },

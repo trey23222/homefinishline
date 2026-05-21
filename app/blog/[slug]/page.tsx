@@ -40,7 +40,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       >
         <div className="max-w-3xl mx-auto">
           <div className="flex items-center gap-3 mb-4">
-            <Link href="/blog" className="text-white/60 text-sm no-underline hover:text-white transition-colors">Blog</Link>
+            <Link href="/blog" className="text-white/60 text-sm no-underline hover:text-white transition-colors">Resources</Link>
             <span className="text-white/30">›</span>
             <span
               className="text-xs font-semibold px-2.5 py-1 rounded"
