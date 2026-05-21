@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: 'Free Home Buying Zoom Class | Register | Home Finish Line',
   description: 'Register for Trey Garza\'s free Zoom home buying class for first-time buyers in San Antonio. Learn about VA loans, down payment assistance, and the mortgage process.',
   robots: { index: false },
+  alternates: { canonical: 'https://homefinishline.com/zoom-register' },
 }
 
 export default function ZoomRegisterPage() {
