@@ -1,8 +1,17 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@supabase/supabase-js'
+import { Resend } from 'resend'
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
 const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+
+const FORM_TYPE_LABELS: Record<string, string> = {
+  guide: 'Free Guide Download',
+  zoom: 'Zoom Class Registration',
+  zoom_register: 'Zoom Class Registration',
+  contact: 'Contact Form',
+  general: 'General Inquiry',
+}
 
 export async function POST(req: NextRequest) {
   try {
@@ -15,7 +24,7 @@ export async function POST(req: NextRequest) {
 
     const supabase = createClient(supabaseUrl, supabaseKey)
 
-    const { error } = await supabase.from('leads').insert({
+    const { error: dbError } = await supabase.from('leads').insert({
       name,
       email,
       phone: phone || null,
@@ -24,9 +33,45 @@ export async function POST(req: NextRequest) {
       created_at: new Date().toISOString(),
     })
 
-    if (error) {
-      console.error('Supabase error:', error)
-      return NextResponse.json({ error: 'Database error' }, { status: 500 })
+    if (dbError) {
+      console.error('Supabase error:', JSON.stringify(dbError))
+      return NextResponse.json({ error: 'Database error', detail: dbError.message }, { status: 500 })
+    }
+
+    // Send email notification via Resend (non-blocking — don't fail the request if this errors)
+    if (process.env.RESEND_API_KEY) {
+      try {
+        const resend = new Resend(process.env.RESEND_API_KEY)
+        const formLabel = FORM_TYPE_LABELS[form_type] ?? form_type ?? 'Unknown'
+
+        await resend.emails.send({
+          from: 'leads@homefinishline.com',
+          to: 'trey.garza@homefinishline.com',
+          subject: `New lead: ${name} — ${formLabel}`,
+          html: `
+            <div style="font-family:sans-serif;max-width:520px;margin:0 auto;color:#1a1a1a">
+              <div style="background:#0D2240;padding:20px 24px;border-radius:8px 8px 0 0">
+                <p style="color:#C9A84C;font-size:11px;letter-spacing:1px;text-transform:uppercase;margin:0 0 4px">Home Finish Line</p>
+                <h1 style="color:#fff;font-size:20px;margin:0">New Lead Submission</h1>
+              </div>
+              <div style="background:#f9f7f3;padding:24px;border:1px solid #e5e0d5;border-top:none;border-radius:0 0 8px 8px">
+                <table style="width:100%;border-collapse:collapse">
+                  <tr><td style="padding:8px 0;border-bottom:1px solid #e5e0d5;font-size:13px;color:#666;width:110px">Form Type</td><td style="padding:8px 0;border-bottom:1px solid #e5e0d5;font-size:13px;font-weight:600">${formLabel}</td></tr>
+                  <tr><td style="padding:8px 0;border-bottom:1px solid #e5e0d5;font-size:13px;color:#666">Name</td><td style="padding:8px 0;border-bottom:1px solid #e5e0d5;font-size:13px;font-weight:600">${name}</td></tr>
+                  <tr><td style="padding:8px 0;border-bottom:1px solid #e5e0d5;font-size:13px;color:#666">Email</td><td style="padding:8px 0;border-bottom:1px solid #e5e0d5;font-size:13px"><a href="mailto:${email}" style="color:#0D2240">${email}</a></td></tr>
+                  <tr><td style="padding:8px 0;border-bottom:1px solid #e5e0d5;font-size:13px;color:#666">Phone</td><td style="padding:8px 0;border-bottom:1px solid #e5e0d5;font-size:13px">${phone || '—'}</td></tr>
+                  ${message ? `<tr><td style="padding:8px 0;font-size:13px;color:#666;vertical-align:top">Message</td><td style="padding:8px 0;font-size:13px">${message.replace(/\n/g, '<br>')}</td></tr>` : ''}
+                </table>
+                <div style="margin-top:20px">
+                  <a href="mailto:${email}" style="background:#0D2240;color:#fff;padding:10px 20px;border-radius:6px;text-decoration:none;font-size:13px;font-weight:600">Reply to ${name} →</a>
+                </div>
+              </div>
+            </div>
+          `,
+        })
+      } catch (emailErr) {
+        console.error('Resend error (non-fatal):', emailErr)
+      }
     }
 
     return NextResponse.json({ success: true })

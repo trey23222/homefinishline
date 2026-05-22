@@ -76,7 +76,7 @@ export default function ZoomRegisterPage() {
           <div className="px-7 pt-2 pb-7">
             <div className="border-t border-[color:var(--border)] pt-6">
               <LeadForm
-                formType="zoom"
+                formType="zoom_register"
                 title=""
                 subtitle=""
                 ctaLabel="Reserve My Spot →"
