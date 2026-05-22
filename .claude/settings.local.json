@@ -15,7 +15,9 @@
       "Bash(dir /s /b \"C:\\\\Users\\\\treyg\\\\Projects\\\\homefinishline\\\\app\\\\*.tsx\")",
       "Bash(dir /s /b \"C:\\\\Users\\\\treyg\\\\Projects\\\\homefinishline\\\\components\\\\*.tsx\")",
       "Bash(npx tsc *)",
-      "Bash(Remove-Item *)"
+      "Bash(Remove-Item *)",
+      "Bash(curl -s -X POST http://localhost:3000/api/lead -H 'Content-Type: application/json' -d '{\"name\":\"Test User\",\"email\":\"test@example.com\",\"phone\":\"2105550000\",\"form_type\":\"contact\",\"message\":\"test\"}')",
+      "Bash(pkill -f \"next dev\")"
     ]
   }
 }
