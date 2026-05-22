@@ -11,7 +11,10 @@
       "PowerShell(Get-Command *)",
       "Bash(git remote *)",
       "Bash(git branch *)",
-      "Bash(git push *)"
+      "Bash(git push *)",
+      "Bash(dir /s /b \"C:\\\\Users\\\\treyg\\\\Projects\\\\homefinishline\\\\app\\\\*.tsx\")",
+      "Bash(dir /s /b \"C:\\\\Users\\\\treyg\\\\Projects\\\\homefinishline\\\\components\\\\*.tsx\")",
+      "Bash(npx tsc *)"
     ]
   }
 }
