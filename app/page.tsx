@@ -127,12 +127,11 @@ export default function HomePage() {
       <section className="py-12">
         <div className="max-w-5xl mx-auto px-8">
           <div className="flex items-center gap-7 bg-white border border-[color:var(--border)] rounded-xl p-7 flex-wrap">
-            <div
-              className="w-[72px] h-[72px] rounded-full bg-navy flex items-center justify-center font-playfair text-2xl font-bold text-gold-light flex-shrink-0"
-              aria-label="Trey Garza"
-            >
-              TG
-            </div>
+            <img
+              src="/images/headshot.png"
+              alt="Trey Garza"
+              className="w-[72px] h-[72px] rounded-full object-cover flex-shrink-0 border-2 border-[color:var(--border)]"
+            />
             <div className="flex-1 min-w-[200px]">
               <h3 className="font-playfair text-base text-navy mb-0.5">Trey Garza</h3>
               <p className="text-sm text-[color:var(--text-muted)] mb-1.5 leading-snug">

@@ -83,13 +83,22 @@ export default function AboutPage() {
                 </a>
               </div>
             </div>
-            <div className="bg-white/10 border border-white/20 rounded-xl p-6">
-              {credentials.map(({ label, value }) => (
-                <div key={label} className="flex justify-between py-2.5 border-b border-white/10 last:border-0 text-sm">
-                  <span className="text-white/60">{label}</span>
-                  <span className="font-semibold text-white text-right">{value}</span>
-                </div>
-              ))}
+            <div className="flex flex-col gap-4">
+              <div className="flex justify-center">
+                <img
+                  src="/images/headshot.png"
+                  alt="Trey Garza"
+                  className="w-32 h-32 rounded-full object-cover border-4 border-white/30"
+                />
+              </div>
+              <div className="bg-white/10 border border-white/20 rounded-xl p-6">
+                {credentials.map(({ label, value }) => (
+                  <div key={label} className="flex justify-between py-2.5 border-b border-white/10 last:border-0 text-sm">
+                    <span className="text-white/60">{label}</span>
+                    <span className="font-semibold text-white text-right">{value}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
