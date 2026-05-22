@@ -15,9 +15,21 @@ const FORM_TYPE_LABELS: Record<string, string> = {
 }
 
 export async function POST(req: NextRequest) {
+  // Log env var presence on every request so Vercel logs show the config state
+  console.log('[lead] env check:', {
+    hasSupabaseUrl: !!supabaseUrl,
+    supabaseUrlValue: supabaseUrl ?? 'MISSING',
+    hasServiceRoleKey: !!process.env.SUPABASE_SERVICE_ROLE_KEY,
+    hasAnonKey: !!process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
+    keyInUse: process.env.SUPABASE_SERVICE_ROLE_KEY ? 'service_role' : 'anon',
+    hasResendKey: !!process.env.RESEND_API_KEY,
+  })
+
   try {
     const body = await req.json()
     const { name, email, phone, form_type, message } = body
+
+    console.log('[lead] incoming:', { name, email, phone: !!phone, form_type, hasMessage: !!message })
 
     if (!name || !email) {
       return NextResponse.json({ error: 'Name and email are required' }, { status: 400 })
@@ -35,9 +47,16 @@ export async function POST(req: NextRequest) {
     })
 
     if (dbError) {
-      console.error('Supabase error:', JSON.stringify(dbError))
+      console.error('[lead] Supabase insert failed:', {
+        code: dbError.code,
+        message: dbError.message,
+        details: dbError.details,
+        hint: dbError.hint,
+      })
       return NextResponse.json({ error: 'Database error', detail: dbError.message }, { status: 500 })
     }
+
+    console.log('[lead] Supabase insert OK')
 
     // Send email notification via Resend (non-blocking — don't fail the request if this errors)
     if (process.env.RESEND_API_KEY) {
@@ -71,13 +90,15 @@ export async function POST(req: NextRequest) {
           `,
         })
       } catch (emailErr) {
-        console.error('Resend error (non-fatal):', emailErr)
+        console.error('[lead] Resend error (non-fatal):', emailErr)
       }
+    } else {
+      console.log('[lead] Resend skipped — RESEND_API_KEY not set')
     }
 
     return NextResponse.json({ success: true })
   } catch (err) {
-    console.error('API error:', err)
+    console.error('[lead] Unhandled error:', err)
     return NextResponse.json({ error: 'Server error' }, { status: 500 })
   }
 }
