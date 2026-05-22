@@ -55,11 +55,14 @@ export default function FirstTimeBuyersPage() {
 
       {/* QUICK NAV */}
       <nav
-        className="bg-white/95 backdrop-blur-sm border-b border-[color:var(--border)] sticky top-16 z-40"
+        className="bg-white/95 backdrop-blur-sm border-b border-[color:var(--border)] sticky top-16 z-40 overflow-x-hidden"
         style={{ boxShadow: '0 2px 12px rgba(13,34,64,0.07)' }}
       >
-        <div className="max-w-5xl mx-auto px-6 overflow-x-auto scrollbar-hide" style={{ WebkitOverflowScrolling: 'touch' }}>
-          <div className="flex flex-nowrap gap-1 py-1">
+        <div
+          className="max-w-5xl mx-auto w-full overflow-x-auto [&::-webkit-scrollbar]:hidden"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        >
+          <div className="flex flex-nowrap gap-1 py-1 px-6">
             {[
               { href: '#loan-programs', label: 'Loan Programs' },
               { href: '#down-payment-assistance', label: 'Down Payment Help' },
