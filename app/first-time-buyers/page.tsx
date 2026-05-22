@@ -55,14 +55,16 @@ export default function FirstTimeBuyersPage() {
 
       {/* QUICK NAV */}
       <nav
-        className="bg-white/95 backdrop-blur-sm border-b border-[color:var(--border)] sticky top-16 z-40 overflow-x-hidden"
+        className="bg-white/95 backdrop-blur-sm border-b border-[color:var(--border)] sticky top-16 z-40"
         style={{ boxShadow: '0 2px 12px rgba(13,34,64,0.07)' }}
       >
         <div
           className="max-w-5xl mx-auto w-full overflow-x-auto [&::-webkit-scrollbar]:hidden"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
-          <div className="flex flex-nowrap gap-1 py-1 px-6">
+          {/* w-max lets the row grow wider than the viewport so overflow-x-auto can scroll it.
+              min-w-full keeps it full-width on desktop when all tabs fit. */}
+          <div className="flex flex-nowrap gap-1 py-1 px-6 w-max min-w-full">
             {[
               { href: '#loan-programs', label: 'Loan Programs' },
               { href: '#down-payment-assistance', label: 'Down Payment Help' },
@@ -73,7 +75,7 @@ export default function FirstTimeBuyersPage() {
               <a
                 key={item.href}
                 href={item.href}
-                className="text-sm font-medium text-[color:var(--text-muted)] px-4 py-3 no-underline rounded-md transition-all hover:text-navy hover:bg-navy/5 relative group"
+                className="whitespace-nowrap text-sm font-medium text-[color:var(--text-muted)] px-4 py-3 no-underline rounded-md transition-all hover:text-navy hover:bg-navy/5 relative group"
               >
                 {item.label}
                 <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-gold-dark rounded-full scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
