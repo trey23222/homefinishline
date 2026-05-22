@@ -58,8 +58,8 @@ export default function FirstTimeBuyersPage() {
         className="bg-white/95 backdrop-blur-sm border-b border-[color:var(--border)] sticky top-16 z-40"
         style={{ boxShadow: '0 2px 12px rgba(13,34,64,0.07)' }}
       >
-        <div className="max-w-5xl mx-auto px-6 overflow-x-auto scrollbar-none">
-          <div className="flex whitespace-nowrap gap-1 py-1">
+        <div className="max-w-5xl mx-auto px-6 overflow-x-auto scrollbar-hide" style={{ WebkitOverflowScrolling: 'touch' }}>
+          <div className="flex flex-nowrap gap-1 py-1">
             {[
               { href: '#loan-programs', label: 'Loan Programs' },
               { href: '#down-payment-assistance', label: 'Down Payment Help' },

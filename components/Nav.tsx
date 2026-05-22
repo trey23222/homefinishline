@@ -61,9 +61,9 @@ export default function Nav() {
         onClick={() => setOpen(!open)}
         aria-label="Menu"
       >
-        <span className={`block w-5.5 h-0.5 bg-white rounded transition-transform ${open ? 'rotate-45 translate-y-1.5' : ''}`} />
-        <span className={`block w-5.5 h-0.5 bg-white rounded transition-opacity ${open ? 'opacity-0' : ''}`} />
-        <span className={`block w-5.5 h-0.5 bg-white rounded transition-transform ${open ? '-rotate-45 -translate-y-1.5' : ''}`} />
+        <span className={`block w-6 h-0.5 bg-white rounded transition-transform ${open ? 'rotate-45 translate-y-1.5' : ''}`} />
+        <span className={`block w-6 h-0.5 bg-white rounded transition-opacity ${open ? 'opacity-0' : ''}`} />
+        <span className={`block w-6 h-0.5 bg-white rounded transition-transform ${open ? '-rotate-45 -translate-y-1.5' : ''}`} />
       </button>
 
       {/* Mobile menu */}

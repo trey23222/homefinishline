@@ -78,4 +78,13 @@
   .spec-value-good {
     @apply font-semibold text-[color:var(--green)];
   }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
 }
