@@ -65,7 +65,7 @@ export async function POST(req: NextRequest) {
         const formLabel = FORM_TYPE_LABELS[form_type] ?? form_type ?? 'Unknown'
 
         await resend.emails.send({
-          from: 'leads@homefinishline.com',
+          from: 'leads@dealyzer.app',
           to: 'trey.garza@homefinishline.com',
           subject: `New lead: ${name} — ${formLabel}`,
           html: `

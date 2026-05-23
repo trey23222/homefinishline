@@ -36,8 +36,7 @@ export default function Footer() {
           <a href="https://treygarza.floify.com/apply" target="_blank" rel="noopener noreferrer" className="text-white/50 no-underline hover:text-white/85 transition-colors">Start Loan Application</a>
           <a href="https://calendly.com/trey-garza-efinitymortgage/30min" target="_blank" rel="noopener noreferrer" className="text-white/50 no-underline hover:text-white/85 transition-colors">Book a Call with Trey</a>
           <Link href="/contact" className="text-white/50 no-underline hover:text-white/85 transition-colors">Contact Trey</Link>
-          <Link href="/zoom-register" className="text-white/50 no-underline hover:text-white/85 transition-colors">Join Free Zoom Class</Link>
-          <a href="mailto:trey.garza@homefinishline.com" className="text-white/50 no-underline hover:text-white/85 transition-colors">trey.garza@homefinishline.com</a>
+<a href="mailto:trey.garza@homefinishline.com" className="text-white/50 no-underline hover:text-white/85 transition-colors">trey.garza@homefinishline.com</a>
         </div>
 
         <div className="flex flex-col gap-1.5 min-w-[140px]">
