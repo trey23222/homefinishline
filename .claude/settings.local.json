@@ -30,7 +30,10 @@
       "Bash(NEXT_DISABLE_TURBOPACK=1 npm run build)",
       "Bash(SUPABASE_SERVICE_ROLE_KEY=test RESEND_API_KEY=test npm run build)",
       "Bash(node -e \"const p = require\\('./package-lock.json'\\); console.log\\('next version locked:', p.packages['node_modules/next']?.version\\)\")",
-      "Bash(grep -i \"path\\\\|dir\\\\|file\\\\|split\\\\\\('\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\|split\\\\\\(\\\\\"\")"
+      "Bash(grep -i \"path\\\\|dir\\\\|file\\\\|split\\\\\\('\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\|split\\\\\\(\\\\\"\")",
+      "Bash(Get-ChildItem -Path C:\\\\Users\\\\treyg\\\\Projects\\\\homefinishline -Directory)",
+      "Bash(Select-Object Name)",
+      "Bash(Get-ChildItem *)"
     ]
   }
 }

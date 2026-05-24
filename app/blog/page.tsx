@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import { getAllPosts } from '@/lib/blog'
+import BlogSearch from '@/components/BlogSearch'
 
 export const metadata: Metadata = {
   title: 'Mortgage Resources & VA Loan Guides | San Antonio TX | Home Finish Line',
@@ -16,8 +16,6 @@ export const metadata: Metadata = {
 
 export default async function BlogPage() {
   const posts = await getAllPosts()
-
-  const categories = ['All', ...Array.from(new Set(posts.map(p => p.category)))]
 
   return (
     <>
@@ -48,30 +46,7 @@ export default async function BlogPage() {
               </p>
             </div>
           ) : (
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {posts.map((post) => (
-                <Link key={post.slug} href={`/blog/${post.slug}`} className="no-underline group">
-                  <article className="bg-white border border-[color:var(--border)] rounded-xl overflow-hidden hover:shadow-lg transition-shadow h-full flex flex-col">
-                    <div className="p-6 flex-1">
-                      <div
-                        className="inline-block text-xs font-semibold px-2.5 py-1 rounded mb-3"
-                        style={{ background: '#EBF0F8', color: '#0D2240' }}
-                      >
-                        {post.category}
-                      </div>
-                      <h2 className="font-playfair text-lg font-bold text-navy leading-snug mb-2 group-hover:text-gold-dark transition-colors">
-                        {post.title}
-                      </h2>
-                      <p className="text-sm text-[color:var(--text-muted)] leading-relaxed line-clamp-3">{post.excerpt}</p>
-                    </div>
-                    <div className="px-6 pb-5 flex items-center justify-between text-xs text-[color:var(--text-muted)]">
-                      <span>{post.date}</span>
-                      <span className="text-gold-dark font-medium">Read →</span>
-                    </div>
-                  </article>
-                </Link>
-              ))}
-            </div>
+            <BlogSearch posts={posts} />
           )}
         </div>
       </section>

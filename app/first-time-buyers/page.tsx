@@ -190,7 +190,7 @@ export default function FirstTimeBuyersPage() {
             </div>
 
             {/* Sidebar */}
-            <div className="sticky top-28 flex flex-col gap-5">
+            <div className="md:sticky md:top-28 flex flex-col gap-5">
               <div className="bg-white border border-[color:var(--border)] rounded-xl p-6">
                 <h3 className="font-playfair text-base font-bold text-navy mb-4">Documents You&apos;ll Need</h3>
                 {[
@@ -289,12 +289,7 @@ export default function FirstTimeBuyersPage() {
           <p className="section-sub">
             Adjust home price, down payment, rate, and term. See your full payment breakdown instantly.
           </p>
-          <div
-            className="overflow-x-auto [&::-webkit-scrollbar]:hidden"
-            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-          >
-            <MortgageCalculator />
-          </div>
+          <MortgageCalculator />
         </div>
       </section>
 
