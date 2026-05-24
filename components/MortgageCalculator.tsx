@@ -92,7 +92,7 @@ export default function MortgageCalculator() {
   return (
     <div className="grid md:grid-cols-[380px_1fr] gap-7 items-start">
       {/* Inputs */}
-      <div className="bg-white border border-[color:var(--border)] rounded-xl overflow-hidden md:sticky md:top-[100px]">
+      <div className="bg-white border border-[color:var(--border)] rounded-xl overflow-hidden md:sticky md:top-[100px] md:self-start">
         <div className="bg-navy px-6 py-5 text-white">
           <h3 className="font-playfair text-base font-bold">Payment Calculator</h3>
           <p className="text-xs text-white/60 mt-0.5">Adjust the sliders to see your estimate</p>

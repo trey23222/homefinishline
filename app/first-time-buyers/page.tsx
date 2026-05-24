@@ -190,7 +190,7 @@ export default function FirstTimeBuyersPage() {
             </div>
 
             {/* Sidebar */}
-            <div className="md:sticky md:top-[100px] flex flex-col gap-5">
+            <div className="md:sticky md:top-[100px] md:self-start flex flex-col gap-5">
               <div className="bg-white border border-[color:var(--border)] rounded-xl p-6">
                 <h3 className="font-playfair text-base font-bold text-navy mb-4">Documents You&apos;ll Need</h3>
                 {[
@@ -243,7 +243,7 @@ export default function FirstTimeBuyersPage() {
             </div>
 
             {/* Sidebar */}
-            <div className="md:sticky md:top-[100px] flex flex-col gap-5">
+            <div className="md:sticky md:top-[100px] md:self-start flex flex-col gap-5">
               <div className="bg-navy rounded-xl p-6 text-white">
                 <div className="font-playfair text-base font-bold mb-2">Still have a question?</div>
                 <p className="text-sm text-white/65 mb-4 leading-snug">I answer every email personally, usually within a few hours on business days.</p>
