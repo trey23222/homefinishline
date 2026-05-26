@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
+import MobileCTABar from '@/components/MobileCTABar'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://homefinishline.com'),
@@ -86,8 +87,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="font-sans antialiased">
         <Nav />
-        <main>{children}</main>
+        <main className="pb-20 md:pb-0">{children}</main>
         <Footer />
+        <MobileCTABar />
       </body>
     </html>
   )
