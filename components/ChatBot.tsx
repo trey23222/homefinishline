@@ -2,6 +2,17 @@
 
 import { useState, useRef, useEffect } from 'react'
 
+function renderMarkdown(text: string): string {
+  return text
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\*(.+?)\*/g, '<em>$1</em>')
+    .replace(/\[(.+?)\]\((https?:\/\/[^\)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="underline text-navy font-medium">$1</a>')
+    .replace(/^[-•]\s+(.+)$/gm, '<li>$1</li>')
+    .replace(/(<li>.*<\/li>)/s, '<ul class="list-disc pl-4 space-y-1 my-1">$1</ul>')
+    .replace(/\n{2,}/g, '</p><p class="mt-2">')
+    .replace(/\n/g, '<br />')
+}
+
 type Message = { role: 'user' | 'assistant'; content: string }
 
 const GREETING: Message = {
@@ -126,15 +137,16 @@ export default function ChatBot() {
           <div className="flex-1 overflow-y-auto p-4 flex flex-col gap-3 bg-cream">
             {messages.map((msg, i) => (
               <div key={i} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-                <div
-                  className={`max-w-[85%] text-sm leading-relaxed px-3.5 py-2.5 rounded-2xl whitespace-pre-wrap ${
-                    msg.role === 'user'
-                      ? 'bg-navy text-white rounded-br-sm'
-                      : 'bg-white text-[color:var(--text)] border border-[color:var(--border)] rounded-bl-sm shadow-sm'
-                  }`}
-                >
-                  {msg.content}
-                </div>
+                {msg.role === 'user' ? (
+                  <div className="max-w-[85%] text-sm leading-relaxed px-3.5 py-2.5 rounded-2xl whitespace-pre-wrap bg-navy text-white rounded-br-sm">
+                    {msg.content}
+                  </div>
+                ) : (
+                  <div
+                    className="max-w-[85%] text-sm leading-relaxed px-3.5 py-2.5 rounded-2xl bg-white text-[color:var(--text)] border border-[color:var(--border)] rounded-bl-sm shadow-sm"
+                    dangerouslySetInnerHTML={{ __html: renderMarkdown(msg.content) }}
+                  />
+                )}
               </div>
             ))}
 
