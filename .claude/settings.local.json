@@ -33,7 +33,8 @@
       "Bash(grep -i \"path\\\\|dir\\\\|file\\\\|split\\\\\\('\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\|split\\\\\\(\\\\\"\")",
       "Bash(Get-ChildItem -Path C:\\\\Users\\\\treyg\\\\Projects\\\\homefinishline -Directory)",
       "Bash(Select-Object Name)",
-      "Bash(Get-ChildItem *)"
+      "Bash(Get-ChildItem *)",
+      "Bash(Select-Object -ExpandProperty FullName)"
     ]
   }
 }

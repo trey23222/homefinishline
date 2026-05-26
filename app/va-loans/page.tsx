@@ -92,6 +92,9 @@ export default function VALoansPage() {
             >
               Check My VA Eligibility →
             </a>
+            <Link href="/va-loan-quiz" className="btn-outline-white">
+              Take the Eligibility Quiz
+            </Link>
             <a
               href="https://calendly.com/trey-garza-efinitymortgage/30min"
               target="_blank"
