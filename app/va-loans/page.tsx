@@ -273,7 +273,7 @@ export default function VALoansPage() {
               Ready to Use Your VA Benefit?
             </h2>
             <p className="text-sm text-[color:var(--text-muted)] max-w-md">
-              A 10-minute call is all it takes to confirm your eligibility and figure out your options. No cost, no obligation.
+              A 10-minute call is all it takes to confirm your eligibility and figure out your options. No obligation, no pressure.
             </p>
           </div>
           <div className="flex gap-2.5 flex-wrap">

@@ -42,7 +42,7 @@ export default function FirstTimeBuyersPage() {
               rel="noopener noreferrer"
               className="btn-primary"
             >
-              Start My Free Pre-Approval →
+              Start My Pre-Approval →
             </a>
             <a href="#loan-programs" className="btn-outline-white">
               Browse Loan Programs
@@ -303,10 +303,10 @@ export default function FirstTimeBuyersPage() {
         <div className="max-w-5xl mx-auto px-8 flex items-center justify-between gap-6 flex-wrap">
           <div>
             <h2 className="font-playfair text-2xl font-bold text-navy mb-1.5">
-              Questions Are Free. So Is Pre-Approval.
+              Questions Are Free. Let&apos;s Talk.
             </h2>
             <p className="text-sm text-[color:var(--text-muted)] max-w-md">
-              Start the process today — no cost, no obligation, no pressure.
+              Start the process today — no obligation, no pressure.
             </p>
           </div>
           <div className="flex gap-2.5 flex-wrap">

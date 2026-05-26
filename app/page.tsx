@@ -106,7 +106,7 @@ export default function HomePage() {
               rel="noopener noreferrer"
               className="btn-primary"
             >
-              Start My Free Pre-Approval →
+              Start My Pre-Approval →
             </a>
             <a
               href="https://calendly.com/trey-garza-efinitymortgage/30min"
