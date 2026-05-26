@@ -3,6 +3,7 @@ import './globals.css'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import MobileCTABar from '@/components/MobileCTABar'
+import ChatBot from '@/components/ChatBot'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://homefinishline.com'),
@@ -90,6 +91,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main className="pb-20 md:pb-0">{children}</main>
         <Footer />
         <MobileCTABar />
+        <ChatBot />
       </body>
     </html>
   )
