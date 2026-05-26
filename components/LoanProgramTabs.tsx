@@ -319,7 +319,7 @@ export default function LoanProgramTabs() {
         </div>
 
         {/* Specs card */}
-        <div className="bg-white border border-[color:var(--border)] rounded-xl overflow-hidden self-start sticky top-[180px]">
+        <div className="bg-white border border-[color:var(--border)] rounded-xl overflow-hidden self-start sticky top-[160px]">
           <div className="px-5 py-4 text-white" style={{ background: program.header.bg }}>
             <div className="font-playfair font-bold text-base">{program.header.title}</div>
             <div className="text-xs text-white/60 mt-0.5">{program.header.sub}</div>
