@@ -289,7 +289,12 @@ export default function FirstTimeBuyersPage() {
           <p className="section-sub">
             Adjust home price, down payment, rate, and term. See your full payment breakdown instantly.
           </p>
-          <MortgageCalculator />
+          <div
+            className="overflow-x-auto md:overflow-visible [&::-webkit-scrollbar]:hidden"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          >
+            <MortgageCalculator />
+          </div>
         </div>
       </section>
 
