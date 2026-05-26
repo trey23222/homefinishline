@@ -8,7 +8,7 @@ function renderMarkdown(text: string): string {
     .replace(/\*(.+?)\*/g, '<em>$1</em>')
     .replace(/\[(.+?)\]\((https?:\/\/[^\)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" style="color:#1a56db;text-decoration:underline;font-weight:500">$1</a>')
     .replace(/^[-•]\s+(.+)$/gm, '<li style="margin:0;padding:0;line-height:1.5">$1</li>')
-    .replace(/((?:<li>[\s\S]*?<\/li>\s*)+)/, '<ul style="margin:4px 0;padding-left:18px;list-style-type:disc">$1</ul>')
+    .replace(/((?:<li>[\s\S]*?<\/li>\s*)+)/, '<ul style="margin:4px 0;padding-left:1.25rem;margin-left:0.25rem;list-style-type:disc">$1</ul>')
     .replace(/\n{2,}/g, '</p><p style="margin:4px 0">')
     .replace(/\n/g, '<br />')
 }
