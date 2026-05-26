@@ -116,9 +116,6 @@ export default function HomePage() {
             >
               Book a Call with Trey
             </a>
-            <Link href="/va-loan-quiz" className="btn-outline-white">
-              VA Eligibility Quiz
-            </Link>
           </div>
         </div>
       </header>
