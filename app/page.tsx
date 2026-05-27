@@ -22,6 +22,7 @@ const audienceCards = [
     iconBg: 'bg-[#FBF3E2]',
     iconColor: 'text-[#7A5A0F]',
     title: 'VA Loan Buyers',
+    image: '/images/card-military.jpg',
     desc: "You've earned this benefit. San Antonio has one of the largest veteran populations in the country, and many buyers here don't realize how powerful the VA loan really is. $0 down, no PMI, competitive rates.",
     stats: [
       { label: 'Down Payment', value: '$0 Required' },
@@ -38,6 +39,7 @@ const audienceCards = [
     iconBg: 'bg-[#EBF0F8]',
     iconColor: 'text-navy',
     title: 'Self-Employed Borrowers',
+    image: '/images/card-professional.jpg',
     desc: 'Tax write-offs are a feature, not a disqualifier. Bank statement loan programs are designed for exactly your situation, using your real cash flow instead of your taxed-down income.',
     stats: [
       { label: 'Income Docs', value: 'Bank Statements' },
@@ -54,6 +56,7 @@ const audienceCards = [
     iconBg: 'bg-[#EBF5EF]',
     iconColor: 'text-[#2A7A4B]',
     title: 'First-Time Buyers',
+    image: '/images/card-homebuyers.jpg',
     desc: "Everything you need to go from 'thinking about it' to holding your keys. Loan programs, down payment assistance, the buying process, FAQ, and a free mortgage calculator, all in one place.",
     stats: [
       { label: 'Min Down Payment', value: '3% (3.5% FHA)' },
@@ -174,6 +177,17 @@ export default function HomePage() {
                 key={card.title}
                 className="bg-white border border-[color:var(--border)] rounded-xl overflow-hidden flex flex-col hover:shadow-lg transition-shadow"
               >
+                {/* Card image banner */}
+                <div
+                  className="h-40 relative flex-shrink-0"
+                  style={{
+                    backgroundImage: `url("${card.image}")`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                  }}
+                >
+                  <div className="absolute inset-0" style={{ background: 'rgba(10, 22, 40, 0.55)' }} />
+                </div>
                 <div className="p-6 flex-1">
                   <div className="flex items-center gap-3 mb-4">
                     <div className={`w-10 h-10 rounded-lg ${card.iconBg} ${card.iconColor} flex items-center justify-center font-bold text-lg flex-shrink-0`}>
