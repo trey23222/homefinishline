@@ -14,6 +14,7 @@ export interface BlogPost {
   excerpt: string
   category: string
   keywords?: string[]
+  coverImage?: string
   contentHtml: string
 }
 
@@ -41,6 +42,7 @@ export async function getAllPosts(): Promise<BlogPost[]> {
         excerpt: data.excerpt || '',
         category: data.category || 'General',
         keywords: data.keywords || [],
+        coverImage: data.coverImage || '',
         contentHtml: await markdownToHtml(content),
       }
     })
@@ -63,6 +65,7 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
     excerpt: data.excerpt || '',
     category: data.category || 'General',
     keywords: data.keywords || [],
+    coverImage: data.coverImage || '',
     contentHtml: await markdownToHtml(content),
   }
 }

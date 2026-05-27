@@ -36,9 +36,16 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       {/* HERO */}
       <header
         className="relative overflow-hidden text-white py-14 px-8"
-        style={{ background: 'linear-gradient(135deg, #0D2240 0%, #1A3A5C 100%)' }}
+        style={
+          post.coverImage
+            ? { backgroundImage: `url("${post.coverImage}")`, backgroundSize: 'cover', backgroundPosition: 'center' }
+            : { background: 'linear-gradient(135deg, #0D2240 0%, #1A3A5C 100%)' }
+        }
       >
-        <div className="max-w-3xl mx-auto">
+        {post.coverImage && (
+          <div className="absolute inset-0" style={{ background: 'rgba(10, 22, 40, 0.65)' }} />
+        )}
+        <div className="relative max-w-3xl mx-auto">
           <div className="flex items-center gap-3 mb-4">
             <Link href="/blog" className="text-white/60 text-sm no-underline hover:text-white transition-colors">Resources</Link>
             <span className="text-white/30">›</span>
