@@ -60,6 +60,12 @@ export default function BlogSearch({ posts }: { posts: BlogPost[] }) {
           {filtered.map((post) => (
             <Link key={post.slug} href={`/blog/${post.slug}`} className="no-underline group">
               <article className="bg-white border border-[color:var(--border)] rounded-xl overflow-hidden hover:shadow-lg transition-shadow h-full flex flex-col">
+                {post.coverImage && (
+                  <div
+                    className="h-44 flex-shrink-0"
+                    style={{ backgroundImage: `url("${post.coverImage}")`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+                  />
+                )}
                 <div className="p-6 flex-1">
                   <div
                     className="inline-block text-xs font-semibold px-2.5 py-1 rounded mb-3"

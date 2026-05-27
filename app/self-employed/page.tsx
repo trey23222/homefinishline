@@ -108,8 +108,9 @@ export default function SelfEmployedPage() {
       {/* HERO */}
       <header
         className="relative overflow-hidden text-white text-center py-16 px-8"
-        style={{ background: 'linear-gradient(135deg, #0D2240 0%, #1A3A5C 60%, #1e4d7a 100%)' }}
+        style={{ backgroundImage: 'url("/images/card-professional.jpg")', backgroundSize: 'cover', backgroundPosition: 'center' }}
       >
+        <div className="absolute inset-0" style={{ background: 'rgba(10, 22, 40, 0.65)' }} />
         <div className="relative max-w-3xl mx-auto">
           <div className="hero-badge">Business Owners · 1099 · Contractors · Freelancers</div>
           <h1 className="font-playfair text-4xl md:text-5xl font-bold leading-tight mb-4">

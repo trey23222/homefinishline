@@ -52,9 +52,10 @@ export default function AboutPage() {
       {/* HERO */}
       <header
         className="relative overflow-hidden text-white py-16 px-8"
-        style={{ background: 'linear-gradient(135deg, #0D2240 0%, #1A3A5C 60%, #1e4d7a 100%)' }}
+        style={{ backgroundImage: 'url("/images/about-hero.jpg")', backgroundSize: 'cover', backgroundPosition: 'center' }}
       >
-        <div className="max-w-5xl mx-auto">
+        <div className="absolute inset-0" style={{ background: 'rgba(10, 22, 40, 0.68)' }} />
+        <div className="relative max-w-5xl mx-auto">
           <div className="grid md:grid-cols-[1fr_280px] gap-10 items-center">
             <div>
               <div className="hero-badge">Licensed Texas Loan Officer · NMLS# 2700813</div>
