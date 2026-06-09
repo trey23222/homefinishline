@@ -45,7 +45,8 @@
       "PowerShell(try { Invoke-WebRequest -Uri \"https://images.unsplash.com/photo-HJckKnwCXxQ?auto=format&fit=crop&w=1200&q=80\" -OutFile \"C:\\\\Users\\\\treyg\\\\Projects\\\\homefinishline\\\\public\\\\images\\\\blog-mortgage-docs.jpg\" -ErrorAction Stop; \\(Get-Item \"C:\\\\Users\\\\treyg\\\\Projects\\\\homefinishline\\\\public\\\\images\\\\blog-mortgage-docs.jpg\"\\).Length } catch { Write-Output \"FAILED: $_\" })",
       "Bash(sed -n '24,54p' app/first-time-buyers/page.tsx)",
       "Bash(sed -n '52,106p' app/about/page.tsx)",
-      "PowerShell(Invoke-WebRequest -Uri \"https://images.unsplash.com/photo-1758523671285-9ff3f4e0ff38?fm=jpg&q=80&w=1600&auto=format&fit=crop\" -OutFile \"C:\\\\Users\\\\treyg\\\\Projects\\\\homefinishline\\\\public\\\\images\\\\blog-first-time-buyer-grants.jpg\"; Write-Host \"Done\")"
+      "PowerShell(Invoke-WebRequest -Uri \"https://images.unsplash.com/photo-1758523671285-9ff3f4e0ff38?fm=jpg&q=80&w=1600&auto=format&fit=crop\" -OutFile \"C:\\\\Users\\\\treyg\\\\Projects\\\\homefinishline\\\\public\\\\images\\\\blog-first-time-buyer-grants.jpg\"; Write-Host \"Done\")",
+      "PowerShell(Get-Item \"C:\\\\Users\\\\treyg\\\\Projects\\\\homefinishline\\\\public\\\\images\\\\blog-how-much-house-afford.jpg\", \"C:\\\\Users\\\\treyg\\\\Projects\\\\homefinishline\\\\public\\\\images\\\\blog-bank-statement-loans-self-employed.jpg\" | Select-Object Name, @{n='KB';e={[math]::Round\\($_.Length/1KB\\)}})"
     ]
   }
 }
