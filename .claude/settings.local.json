@@ -46,7 +46,13 @@
       "Bash(sed -n '24,54p' app/first-time-buyers/page.tsx)",
       "Bash(sed -n '52,106p' app/about/page.tsx)",
       "PowerShell(Invoke-WebRequest -Uri \"https://images.unsplash.com/photo-1758523671285-9ff3f4e0ff38?fm=jpg&q=80&w=1600&auto=format&fit=crop\" -OutFile \"C:\\\\Users\\\\treyg\\\\Projects\\\\homefinishline\\\\public\\\\images\\\\blog-first-time-buyer-grants.jpg\"; Write-Host \"Done\")",
-      "PowerShell(Get-Item \"C:\\\\Users\\\\treyg\\\\Projects\\\\homefinishline\\\\public\\\\images\\\\blog-how-much-house-afford.jpg\", \"C:\\\\Users\\\\treyg\\\\Projects\\\\homefinishline\\\\public\\\\images\\\\blog-bank-statement-loans-self-employed.jpg\" | Select-Object Name, @{n='KB';e={[math]::Round\\($_.Length/1KB\\)}})"
+      "PowerShell(Get-Item \"C:\\\\Users\\\\treyg\\\\Projects\\\\homefinishline\\\\public\\\\images\\\\blog-how-much-house-afford.jpg\", \"C:\\\\Users\\\\treyg\\\\Projects\\\\homefinishline\\\\public\\\\images\\\\blog-bank-statement-loans-self-employed.jpg\" | Select-Object Name, @{n='KB';e={[math]::Round\\($_.Length/1KB\\)}})",
+      "PowerShell(Invoke-WebRequest -Uri \"https://images.unsplash.com/photo-1710627748327-68039e03b8d2?fm=jpg&q=80&w=1600&auto=format&fit=crop\" -OutFile \"C:\\\\Users\\\\treyg\\\\Projects\\\\homefinishline\\\\public\\\\images\\\\blog-usda-rural-texas.jpg\"; Get-Item \"C:\\\\Users\\\\treyg\\\\Projects\\\\homefinishline\\\\public\\\\images\\\\blog-usda-rural-texas.jpg\" | Select-Object Name, Length)",
+      "PowerShell(Invoke-WebRequest -Uri \"https://images.unsplash.com/photo-1758915576261-8da237f62126?fm=jpg&q=80&w=1600&auto=format&fit=crop\" -OutFile \"C:\\\\Users\\\\treyg\\\\Projects\\\\homefinishline\\\\public\\\\images\\\\blog-usda-rural-texas.jpg\"; Get-Item \"C:\\\\Users\\\\treyg\\\\Projects\\\\homefinishline\\\\public\\\\images\\\\blog-usda-rural-texas.jpg\" | Select-Object Name, Length)",
+      "PowerShell(npm run *)",
+      "PowerShell(git add *)",
+      "PowerShell(git *)",
+      "PowerShell($f1 = Get-Item \"C:\\\\Users\\\\treyg\\\\Projects\\\\homefinishline\\\\public\\\\images\\\\blog-active-duty-san-antonio.jpg\"; Write-Output \"File 1: $\\($f1.Length\\) bytes\")"
     ]
   }
 }
