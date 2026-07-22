@@ -12,6 +12,8 @@ const FORM_TYPE_LABELS: Record<string, string> = {
   zoom_register: 'Zoom Class Registration',
   contact: 'Contact Form',
   general: 'General Inquiry',
+  physician: 'Physician Loan Guide',
+  dscr: 'DSCR Loan Guide',
 }
 
 export async function POST(req: NextRequest) {

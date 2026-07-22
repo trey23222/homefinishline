@@ -127,6 +127,9 @@ export default function AboutPage() {
                 <p>
                   Beyond VA loans, I work regularly with self-employed borrowers and first-time buyers. The mortgage process has a reputation for being confusing and stressful. My job is to change that experience — clear communication, honest answers, no runaround.
                 </p>
+                <p>
+                  I also work with professionals and move-up buyers across San Antonio, from physicians and residents financing their first home to homeowners ready to trade up to their next one.
+                </p>
               </div>
             </div>
 

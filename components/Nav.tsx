@@ -6,8 +6,9 @@ import { usePathname } from 'next/navigation'
 
 const links = [
   { href: '/va-loans', label: 'VA Loans' },
-  { href: '/self-employed', label: 'Self-Employed' },
   { href: '/first-time-buyers', label: 'First-Time Buyers' },
+  { href: '/physician-loans', label: 'Physician Loans' },
+  { href: '/dscr-loans', label: 'DSCR' },
   { href: '/blog', label: 'Resources' },
   { href: '/about', label: 'About' },
   { href: '/contact', label: 'Contact' },

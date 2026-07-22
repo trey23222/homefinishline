@@ -3,7 +3,7 @@
 import { useState } from 'react'
 
 interface LeadFormProps {
-  formType?: 'guide' | 'zoom' | 'zoom_register' | 'contact'
+  formType?: 'guide' | 'zoom' | 'zoom_register' | 'contact' | 'physician' | 'dscr'
   title?: string
   subtitle?: string
   ctaLabel?: string

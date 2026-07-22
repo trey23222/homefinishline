@@ -22,7 +22,7 @@ const audienceCards = [
     iconBg: 'bg-[#FBF3E2]',
     iconColor: 'text-[#7A5A0F]',
     title: 'VA Loan Buyers',
-    image: '/images/card-military.jpg',
+    image: 'https://images.unsplash.com/photo-1529787730-bdcabd22a644?auto=format&fit=crop&w=1200&q=80',
     desc: "You've earned this benefit. San Antonio has one of the largest veteran populations in the country, and many buyers here don't realize how powerful the VA loan really is. $0 down, no PMI, competitive rates.",
     stats: [
       { label: 'Down Payment', value: '$0 Required' },
@@ -34,29 +34,12 @@ const audienceCards = [
     accent: '#7A5A0F',
   },
   {
-    badge: 'Business Owners · 1099',
-    icon: '$',
-    iconBg: 'bg-[#EBF0F8]',
-    iconColor: 'text-navy',
-    title: 'Self-Employed Borrowers',
-    image: '/images/card-professional.jpg',
-    desc: 'Tax write-offs are a feature, not a disqualifier. Bank statement loan programs are designed for exactly your situation, using your real cash flow instead of your taxed-down income.',
-    stats: [
-      { label: 'Income Docs', value: 'Bank Statements' },
-      { label: 'Tax Returns', value: 'Not Required' },
-      { label: 'Loan Types', value: 'Conv · FHA · Portfolio' },
-    ],
-    cta: 'See How It Works',
-    href: '/self-employed',
-    accent: '#0D2240',
-  },
-  {
     badge: 'New to Buying',
     icon: '⌂',
     iconBg: 'bg-[#EBF5EF]',
     iconColor: 'text-[#2A7A4B]',
     title: 'First-Time Buyers',
-    image: '/images/card-homebuyers.jpg',
+    image: 'https://images.unsplash.com/photo-1758523671285-9ff3f4e0ff38?auto=format&fit=crop&w=1200&q=80',
     desc: "Everything you need to go from 'thinking about it' to holding your keys. Loan programs, down payment assistance, the buying process, FAQ, and a free mortgage calculator, all in one place.",
     stats: [
       { label: 'Min Down Payment', value: '3% (3.5% FHA)' },
@@ -66,6 +49,57 @@ const audienceCards = [
     cta: 'First-Time Buyer Resources',
     href: '/first-time-buyers',
     accent: '#2A7A4B',
+  },
+  {
+    badge: 'Doctors · Dentists · Residents · Fellows',
+    icon: '✚',
+    iconBg: 'bg-[#EBF0F8]',
+    iconColor: 'text-navy',
+    title: 'Physician & Professional Buyers',
+    image: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=1200&q=80',
+    desc: 'Attending physicians, residents, fellows, and dentists get loan programs built around your career path — low or no down payment, favorable student loan treatment, and the ability to close on a signed contract before your start date.',
+    stats: [
+      { label: 'Down Payment', value: 'As Low as 0%' },
+      { label: 'Monthly PMI', value: 'None (most programs)' },
+      { label: 'Student Loans', value: 'Favorable DTI Treatment' },
+    ],
+    cta: 'Explore Physician Loans',
+    href: '/physician-loans',
+    accent: '#0D2240',
+  },
+  {
+    badge: 'Trading Up · Growing Families',
+    icon: '↑',
+    iconBg: 'bg-[#EAF0F6]',
+    iconColor: 'text-[#1A3A5C]',
+    title: 'Move-Up Buyers',
+    image: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1200&q=80',
+    desc: "Ready to trade up to your next home? Whether you're upgrading for more space, a growing family, or a better fit, I'll help you plan the timing, financing, and equity strategy to make the move smoothly.",
+    stats: [
+      { label: 'Loan Types', value: 'Conventional · Jumbo' },
+      { label: 'Equity', value: 'Use Toward Next Down Payment' },
+      { label: 'Timeline', value: 'Buy Before or After You Sell' },
+    ],
+    cta: 'Talk to Trey About Your Next Move',
+    href: '/contact',
+    accent: '#1A3A5C',
+  },
+  {
+    badge: 'Investors · Rental Properties',
+    icon: '$',
+    iconBg: 'bg-[#FBF0DE]',
+    iconColor: 'text-[#C8952A]',
+    title: 'Real Estate Investors (DSCR)',
+    image: 'https://images.unsplash.com/photo-1742318592061-15c5f19e1e47?auto=format&fit=crop&w=1200&q=80',
+    desc: "Buying a rental property? DSCR loans qualify based on the property's rental income, not your personal income or tax returns. LLC and entity ownership welcome, ideal for growing your portfolio.",
+    stats: [
+      { label: 'Qualifying Income', value: 'Property Cash Flow' },
+      { label: 'Tax Returns', value: 'Not Required' },
+      { label: 'Ownership', value: 'LLC / Entity Allowed' },
+    ],
+    cta: 'Explore DSCR Loans',
+    href: '/dscr-loans',
+    accent: '#C8952A',
   },
 ]
 
@@ -100,7 +134,7 @@ export default function HomePage() {
             <span className="text-gold-light">Trey Garza</span>
           </h1>
           <p className="text-white/80 text-base max-w-xl mx-auto mb-8 leading-relaxed">
-            Licensed Texas Loan Officer helping veterans, self-employed borrowers, and first-time buyers navigate the mortgage process — clearly, honestly, without the runaround.
+            Licensed Texas Loan Officer helping veterans, first-time buyers, and move-up buyers navigate the mortgage process — clearly, honestly, without the runaround.
           </p>
           <div className="flex gap-3 justify-center flex-wrap">
             <a
@@ -142,7 +176,7 @@ export default function HomePage() {
                 VA Loan Specialist · NMLS# 2700813
               </p>
               <p className="text-sm text-[color:var(--text-mid)] leading-relaxed">
-                I specialize in VA loans for San Antonio&apos;s veteran community and help self-employed borrowers and first-time buyers navigate the mortgage process without the confusion. Every client gets straight answers and a clear path to closing.
+                I specialize in VA loans for San Antonio&apos;s veteran community and help first-time buyers, professionals, and move-up buyers navigate the mortgage process without the confusion. Every client gets straight answers and a clear path to closing.
               </p>
             </div>
             <div className="flex gap-2.5 flex-wrap ml-auto">
@@ -168,10 +202,10 @@ export default function HomePage() {
           <div className="section-label">Who I Help</div>
           <h2 className="section-title">Your Path to Homeownership</h2>
           <p className="section-sub">
-            Whether you&apos;ve served our country, run your own business, or are buying your first home, there&apos;s a clear path forward. Choose your situation below.
+            Whether you&apos;ve served our country, are buying your first home, work as a physician or professional, are ready to move up, or are growing a rental portfolio, there&apos;s a clear path forward. Choose your situation below.
           </p>
 
-          <div className="grid md:grid-cols-3 gap-5">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {audienceCards.map((card) => (
               <div
                 key={card.title}
